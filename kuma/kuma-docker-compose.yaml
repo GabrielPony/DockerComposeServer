@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+  uptime-kuma:
+    image: louislam/uptime-kuma:1.23.16
+    container_name: kuma
+    restart: unless-stopped
+    volumes:
+      - ./data:/app/data
+    expose:
+      - 3001
+    labels:
+      createdBy: "Apps"
+    networks:
+      - nginx_all_in_one
+networks:
+  nginx_all_in_one:
+    external: true
+
+

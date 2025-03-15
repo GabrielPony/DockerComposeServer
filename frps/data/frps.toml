@@ -1,0 +1,27 @@
+# frps.toml 配置文件
+# 全局配置
+[common]
+# frps 监听地址，0.0.0.0 表示监听所有网络接口
+bind_addr = "0.0.0.0"
+# frps 监听端口，用于接收 frpc 的连接
+bind_port = 10090
+# 认证令牌，必须与 frpc 配置中的 token 一致
+token = "V6vRqz0tMHuRPuz"
+
+# 控制面板相关配置（可选）
+dashboard_addr = "0.0.0.0"
+dashboard_port = 10091
+# 控制面板访问的用户名和密码
+dashboard_user = "admin"
+dashboard_pwd = "Gcb990217!"
+
+# 日志配置
+log_file = "/var/log/frps.log"
+log_level = "info"
+log_max_days = 3
+
+# 允许的端口范围（确保包含所有您需要的端口）
+allow_ports = ["10000-10100"]
+
+
+

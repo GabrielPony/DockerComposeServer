@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  frpc:
+    image: snowdreamtech/frpc:latest
+    container_name: frpc
+    restart: unless-stopped
+    expose:
+      - "10000-10100:10000-10100"
+    volumes:
+      - ./data/frpc.toml:/etc/frp/frpc.toml
+    networks:
+      - nginx_all_in_one
+networks:
+  nginx_all_in_one:
+    external: true
+
+

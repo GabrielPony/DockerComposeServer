@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  frps:
+    image: snowdreamtech/frps:latest
+    container_name: frps
+    restart: unless-stopped
+    ports:
+      - "10000-10100:10000-10100"
+    volumes:
+      - ./data/frps.toml:/etc/frp/frps.toml
+    networks:
+      - nginx_all_in_one
+networks:
+  nginx_all_in_one:
+    external: true
+
+

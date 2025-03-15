@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  ubuntu-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        USERNAME: gabriel
+        PASSWORD: 1111
+    container_name: ubuntu-dev
+    restart: unless-stopped
+    volumes:
+      - ./share:/home/gabriel
+    # 如果需要保持容器运行
+    tty: true
+    stdin_open: true
+    networks:
+      - nginx_all_in_one
+networks:
+  nginx_all_in_one:
+    external: true

@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  postgres12:
+    image: postgres:12.10
+    container_name: postgres12
+    restart: unless-stopped
+    environment:
+      POSTGRES_PASSWORD: kQSHaDep7U3sTyicgp3lnzdfMI0VWe
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    expose:
+      - 5432
+    networks:
+        - nginx_all_in_one
+networks:
+  nginx_all_in_one:
+    external: true

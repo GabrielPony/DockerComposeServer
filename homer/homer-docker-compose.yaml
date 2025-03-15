@@ -1,0 +1,20 @@
+version: "3.8"
+services:
+  homer:
+    image: b4bz/homer
+    container_name: homer
+    volumes:
+      - ./data/www/assets:/www/assets # Make sure your local config directory exists
+    user: 1000:1000 # default
+    restart: unless-stopped
+    environment:
+      - INIT_ASSETS=1 # default, requires the config directory to be writable for the container user (see user option)
+      - PORT=3002
+    expose:
+      - 3002
+    networks:
+      - nginx_all_in_one
+networks:
+  nginx_all_in_one:
+    external: true
+

@@ -1,0 +1,157 @@
+
+## Homepage configuration
+## See https://fontawesome.com/search for icons options
+#
+#title: "Gabriel dashboard"
+#subtitle: "Homer"
+logo: "logo.png"
+# icon: "fas fa-skull-crossbones" # Optional icon
+
+header: true
+footer: 'Home Manger'
+
+# Optional theme customization
+theme: customization
+
+# Optional theme customization (color overrrides)
+# overrrides can also be done using CSS vars
+colors:
+  light:
+    # Catppuccin Latte - 加深对比度
+    highlight-primary: "#7287fd"     # 更深的 Lavender
+    highlight-secondary: "#89b4fa"   # 更亮的 Blue
+    highlight-hover: "#e64553"       # 加深的 Red
+    background: "#eff1f5"           # Base
+    card-background: "#ffffff"      # 保持纯白
+    text: "#4c4f69"                 # 加深的 Text
+    text-header: "#ffffff"          # 保持纯白
+    text-title: "#179299"           # 加深的 Teal
+    text-subtitle: "#5c5f77"        # 加深的 Subtext1
+    card-shadow: rgba(76, 79, 105, 0.2) # 加深阴影
+    link: "#1e66f5"                 # 加深的 Blue
+    link-hover: "#d20f39"           # 加深的 Red
+  dark:
+    # Catppuccin Mocha - 加深对比度
+    highlight-primary: "#cba6f7"    # Mauve
+    highlight-secondary: "#8839ef"   # 更深的 Mauve
+    highlight-hover: "#f38ba8"      # 更亮的 Red
+    background: "#11111b"           # 更深的 Base
+    card-background: "#1e1e2e"      # 更深的 Surface0
+    text: "#cdd6f4"                 # Text
+    text-header: "#ffffff"          # 纯白
+    text-title: "#94e2d5"           # 更亮的 Teal
+    text-subtitle: "#bac2de"        # 更亮的 Subtext0
+    card-shadow: rgba(166, 173, 200, 0.3) # 加深阴影
+    link: "#89dceb"                 # 更亮的 Sky
+    link-hover: "#fab387"           # 更亮的 Peach
+
+# Optional message
+#message:
+#  #url: https://b4bz.io
+#  style: "is-dark" # See https://bulma.io/documentation/components/message/#colors for styling options.
+#  title: "Demo !"
+#  icon: "fa fa-grin"
+#  content: "This is a dummy homepage demo. <br /> Find more information on <a href='https://github.com/bastienwirtz/homer'>github.com/bastienwirtz/homer</a>"
+
+# Optional navbar
+# links: [] # Allows for navbar (dark mode, layout, and search) without any links
+links:
+  - name: "Contribute"
+    icon: "fab fa-github"
+    url: "https://github.com/bastienwirtz/homer"
+    target: "_blank" # optional html a tag target attribute
+  - name: "Wiki"
+    icon: "fas fa-book"
+    url: "https://www.wikipedia.org/"
+  # this will link to a second homer page that will load config from additional-page.yml and keep default config values as in config.yml file
+  # see url field and assets/additional-page.yml.dist used in this example:
+  #- name: "another page!"
+  #  icon: "fas fa-file-alt"
+  #  url: "#additional-page"
+
+# Services
+# First level array represent a group.
+# Leave only a "items" key if not using group (group name, icon & tagstyle are optional, section separation will not be displayed).
+services:
+  - name: "Server Manage"
+    icon: "fas fa-tag"
+    items:
+      - name: "Server Monitor"
+        icon: "fa-solid fa-server"
+        url: "http://kuma.529777.xyz/dashboard"
+      - name: "Aliyun"
+        icon: "fa-solid fa-cloud"
+        subtitle: "Self Server Support by Aliyun"
+        tag: "Manage"
+        url: "http://8.129.236.1:8080/43c8037ffd"
+        type: "PiHole"
+      - name: "HomeServer"
+        icon: "fa-solid fa-cloud"
+        subtitle: "Self Server Support by Home"
+        tag: "Manage"
+        url: "https://panel.529777.xyz/e5fc6937e3"
+        type: "PiHole"
+
+  - name: "Home NetWork Group"
+    icon: "fas fa-tag"
+    items:
+      - name: "Esxi"
+        icon: "fa-solid fa-book"
+        subtitle: "Home Virtual Machine"
+        tag: "NetworkManager"
+        url: "https://esxi.529777.xyz"
+      - name: "Ikuai"
+        icon: "fa-solid fa-book"
+        subtitle: "Home Network Manger Tools"
+        tag: "NetworkManager"
+        url: "https://ikuai.529777.xyz"
+      - name: "OpenWrt"
+        icon: "fa-solid fa-book"
+        subtitle: "Home Network Manger Tools"
+        tag: "NetworkManager"
+        url: "https://openwrt.529777.xyz"
+
+  - name: "Documents Working"
+    icon: "fas fa-cloud"
+    items:
+      - name: "Outline"
+        icon: "fa-solid fa-book"
+        subtitle: "Wiki of Gabriel"
+        tag: "Working"
+        url: "https://outline.529777.xyz"
+      - name: "SSO"
+        icon: "fa-solid fa-book"
+        subtitle: "Wiki Account Manger of Gabriel"
+        tag: "Working"
+        url: "https://sso.529777.xyz"
+      - name: "Minio"
+        icon: "fa-solid fa-book"
+        subtitle: "Wiki Account Manger of Gabriel"
+        tag: "Working"
+        url: "https://minio.529777.xyz"
+      - name: "Wiki"
+        icon: "fa-solid fa-palette"
+        subtitle: "Customize Homer appearance"
+        tag: "theming"
+        url: "https://github.com/bastienwirtz/homer/blob/main/docs/theming.md"
+
+      - name: "Smart cards"
+        icon: "fa-solid fa-palette"
+        subtitle: "Displays dynamic information or actions."
+        tag: "setup"
+        url: "https://github.com/bastienwirtz/homer/blob/main/docs/customservices.md"
+
+  - name: "Customize"
+    icon: "fas fa-cloud"
+    items:
+      - name: "Icons of FontAwesome"
+        icon: "fa-solid fa-icons"
+        subtitle: "Dashboard icons"
+        tag: "setup"
+        url: "https://fontawesome.com/icons"
+
+      - name: "Icons of OpenSource"
+        icon: "fa-solid fa-icons"
+        subtitle: "Dashboard icons"
+        tag: "setup"
+        url: "https://github.com/walkxcode/dashboard-icons"

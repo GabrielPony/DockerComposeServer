@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  redis:
+    image: redis:7.0.8
+    container_name: redis
+    restart: unless-stopped
+    command: 
+      --requirepass "kQSHaDep7U3sTyicgp3lnzdfMI0VWe"
+    expose:
+      - 6379
+    volumes:
+      - ./data:/data
+    privileged: true
+    networks:
+      - nginx_all_in_one
+networks:
+  nginx_all_in_one:
+    external: true

@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  nginx:
+    image: nginx:1.23.3
+    container_name: nginx
+    restart: unless-stopped
+    ports:
+      - "10000-10100:10000-10100"
+    volumes:
+      - ./data/conf/conf.d:/etc/nginx/conf.d
+      - ./data/conf/nginx.conf:/etc/nginx/nginx.conf
+      - ./data/conf/ssl:/etc/nginx/ssl
+      - ./data/logs:/var/log/nginx
+      - ./data/www:/usr/share/nginx/html
+    networks:
+      - nginx_all_in_one
+networks:
+  nginx_all_in_one:
+    external: true

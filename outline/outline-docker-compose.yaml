@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  outline:
+    image: outlinewiki/outline:0.70.2
+    container_name: outline
+    env_file: ./outline-docker.env
+    expose:
+      - 3000
+    networks:
+      - nginx_all_in_one
+networks:
+  nginx_all_in_one:
+    external: true

@@ -1,0 +1,88 @@
+# frpc.toml
+# 基础配置
+serverAddr = "8.129.236.1"
+# serverAddr = "207.180.248.6"
+serverPort = 10090
+auth.token = "V6vRqz0tMHuRPuz"
+
+# 日志配置
+log.to = "console"
+log.level = "info"
+log.maxDays = 3
+
+# 连接设置
+transport.tcpMux = true
+transport.heartbeatInterval = 30
+transport.heartbeatTimeout = 90
+
+# 代理配置
+[[proxies]]
+name = "homer"
+type = "tcp"
+localIP = "192.168.7.5"
+localPort = 10000
+remotePort = 10000
+
+[[proxies]]
+name = "ikuai"
+type = "tcp"
+localIP = "192.168.7.5"
+localPort = 10001
+remotePort = 10001
+
+[[proxies]]
+name = "esxi"
+type = "tcp"
+localIP = "192.168.7.5"
+localPort = 10002
+remotePort = 10002
+
+[[proxies]]
+name = "openwrt"
+type = "tcp"
+localIP = "192.168.7.5"
+localPort = 10003
+remotePort = 10003
+
+[[proxies]]
+name = "ssh-service"
+type = "tcp"
+localIP = "192.168.7.5"
+localPort = 10005
+remotePort = 10005
+
+[[proxies]]
+name = "kuma"
+type = "tcp"
+localIP = "192.168.7.5"
+localPort = 10010
+remotePort = 10010
+
+[[proxies]]
+name = "outline"
+type = "tcp"
+localIP = "192.168.7.5"
+localPort = 10020
+remotePort = 10020
+
+[[proxies]]
+name = "minio-api"
+type = "tcp"
+localIP = "192.168.7.5"
+localPort = 10021
+remotePort = 10021
+
+[[proxies]]
+name = "minio-console"
+type = "tcp"
+localIP = "192.168.7.5"
+localPort = 10022
+remotePort = 10022
+
+[[proxies]]
+name = "keycloak"
+type = "tcp"
+localIP = "192.168.7.5"
+localPort = 10023
+remotePort = 10023
+
